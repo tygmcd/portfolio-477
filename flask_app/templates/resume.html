@@ -1,0 +1,57 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+    <!-- Resume page content -->
+    <div class="resume-wrapper">
+      <!-- For each institution - generate a row -->
+        {% for inst_id, inst in resume_data.items() %}
+          <div class="resume-content">
+            <div class="institution-content">
+              <strong><h1 class="inst-title">{{ inst['name']}} </h1></strong>
+              <p class="city-state">{{ inst['department'] + " - " if inst['department'] is not none else ""}}{{ ", "  + inst['address'] + "," if inst['address'] is not none else "" }} {{ inst['city'] + "," if inst['city'] is not none else "" }} {{ inst['state'] if inst['state'] is not none else "" }} {{ inst['zip'] if inst['zip'] is not none else "" }} </p>
+            </div>
+            
+            <!-- Display all positions for each institution -->
+            {% if inst['positions'] != {} %}
+              {% for pos_id, pos in inst['positions'].items() %}
+                <div class="pos-content">
+                  <div class="pos-1">
+                    <em><h3 class="pos-title">{{ pos['title'] }}</h3></em><br>
+                    <p class="dates-mobile">{{ pos['start_date'] }} - {{ pos['end_date'] if pos['end_date'] is not none else "Present" }}</p>
+                    <p class="pos-resp">{{ pos['responsibilities'] }}</p>
+                    {% if pos['experiences'] != {} %}
+                      <!-- Display all experiences for each position-->
+                      <ul class="exp-list">
+                        {% for exp_id, exp in pos['experiences'].items() %}
+                          {% if exp['hyperlink'] is not none %}
+                            <li class="exp-text"><a href="{{ exp['hyperlink'] }}">{{ exp['name'] }}</a>: {{ exp['description'] }}</li>
+                          {% else %}
+                            <li class="exp-text">{{ exp['name'] }}: {{ exp['description'] }}</li>
+                          {% endif %}
+                          <!-- Display all skills for each experience -->
+                          <ul class="skill-list">
+                          {% for skill_id, skill in exp['skills'].items() %}
+                            <li class="skill-text">{{ skill['name'] }}</li>
+                          {% endfor %}
+                          </ul>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                    <br>
+                  </div>
+                  <!-- Dates for positions, at bottom for formatting reasons -->
+                  <div class="pos-2">
+                    <p class="dates">{{ pos['start_date'] }} - {{ pos['end_date'] if pos['end_date'] is not none else "Present" }}</p><br>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <!-- Divider for each institution-->
+          <hr class="inst-div">
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+

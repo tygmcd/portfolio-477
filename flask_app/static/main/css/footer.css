@@ -1,0 +1,19 @@
+/* Footer Stylesheet */
+
+/* Wrapper for the footer itself */
+.footer-wrapper {
+    height: 10vh;
+    display: flex;
+    gap: 5vh;
+    background-color: #F6F6F6;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Properties for copyright text */
+.c-text {
+    text-align: center;
+    text-justify: inter-word;
+    font-size: 1.1rem;
+    color: #6d6c6c;
+}

@@ -1,0 +1,25 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block extrajs %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='main/js/chat.js') }}"></script>
+{% endblock %}
+
+
+{% block maincontent %}
+<div class="chat-wrapper">
+    <h1>Chat</h1>
+    <div id="online-count"></div>
+    <div id='chat' contenteditable></div>
+    <div class="msg-controls">
+        <input id="msg-input" placeholder="Enter Your Message Here" type="text" />
+        <button id="msg-send" type="button">Send</button>
+    </div>
+    <div class="msg-controls">
+        <button id="chat-leave" type="button">Leave Chat</button>
+    </div>
+</div>
+    
+{% endblock %}

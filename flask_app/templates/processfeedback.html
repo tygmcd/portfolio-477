@@ -1,0 +1,16 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+    <!-- Dynamically populated feedback page from DB -->
+    <div class="feedback-wrapper">
+        <h2 class="fb-title">Thanks for your feedback - here's what others had to say:</h2>
+        <div class="fb-content">
+            <ul>
+                <!-- Loop thru each row in feedback table and add to list -->
+                {% for row in data %}
+                    <li class="fb-text">- {{ row['name'] }} {{ "(" + row['email'] + ")" if row['email'] != "" }} said: "{{ row['comment'] }}"</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

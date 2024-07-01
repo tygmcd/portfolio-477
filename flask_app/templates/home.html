@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+  <!-- Main page content -->
+  <div class="main-wrapper">
+    <div class="image-col">
+      <img class="portrait" src="{{ url_for('static', filename='main/images/tylerlong-2.jpg') }}"  alt="self-portrait" loading="lazy">
+    </div>
+    <div class="desc-col">
+      <p><span class="name">Tyler McDonald</span> is a 4th year student at <span class="msu">Michigan State University</span> studying Computer Science. From a young age, he has possessed a deep passion for all things computers and technology. </p>
+      <p class="bio-2">Tyler has experience in a variety of programming languages, scripting languages, and frameworks such as C++, C, Java, Python, Javascript, Flutter, Dart, HTML, CSS, Spring, Bootstrap, and more. 
+        Professionally, Tyler has experience as a Undergraduate Learning Assistant for an introductory Python course where he helps students understand core programming concepts by lecturing content, and aiding students in debugging their code. 
+        He also spent this past summer as a Software Developer Intern at <span class="ao">Auto-Owners Insurance</span> where he worked on the Agency Interface Web Systems team. Some of his projects included
+        refreshing pages on the company's intranet using an in-house CSS framework, creating a transaction quota validator to prevent bad-actors from acessing internal systems, and addressing
+        bugs throughout a variety of Java applications.</p>
+      <p class="bio-2">This summer, Tyler will be working at <span class="stellantis">Stellantis</span> as an Information Technology Intern. He is excited to work in the auto industry as well as broaden his technological horizons.</p>
+    </div>
+  </div>
+
+  <!-- Personal fact content -->
+  <div class="fact-wrapper">
+    <hr class="divider">
+    <h1 class="fact-title">A fun fact about me:</h1>
+    <p class="fact-p">{{ fun_fact }}</p>
+  </div>
+{% endblock %}
+
+

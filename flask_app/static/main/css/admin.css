@@ -1,0 +1,71 @@
+/* Wrapper for admin content */
+.admin-wrapper {
+    display: flex;
+    width: 70%;
+    height: 55vh;
+    margin: 5vh auto;
+    justify-content: space-around;
+}
+
+
+/* Heading for DB clear action */
+.a-heading {
+    margin-bottom: 1vh;
+}
+
+/* Form label */
+#clear-label, .account-name {
+    font-size: 1.2rem;
+}
+
+/* Span for role */
+.role {
+    font-size: 0.8rem;
+}
+
+/* Form button */
+.a-button {
+    margin-top: 1vh;
+    width: 5rem;
+    height: 1.5rem;
+}
+
+/* Create account form */
+#create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Input boxes for email/password */
+.account-input {
+    padding: 0.2rem;
+}
+
+/* Message to be displayed upon success */
+.status-msg-g {
+    padding-top: 1vh;
+    color: green;
+}
+
+/* Message to be displayed upon failure */
+.status-msg-r {
+    padding-top: 1vh;
+    color: red;
+}
+
+@media screen and (max-width: 650px) {
+    .admin-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 55vh;
+        margin: 5vh auto;
+    }
+
+    /* Input boxes for email/password */
+    .account-input {
+        padding: 0.2rem;
+        height: 1.5rem;
+    }
+}

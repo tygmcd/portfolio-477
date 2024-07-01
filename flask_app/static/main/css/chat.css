@@ -1,0 +1,98 @@
+/* Chat Stylesheet */
+
+/* Wrapper class for entire chat page */
+.chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80vh;
+    margin: 0 auto;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 0.5rem;
+}
+
+/* Chat box itself */
+#chat {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 65%;
+    border: 0.1rem solid #000;
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    background-color: #E5E5E5;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    overflow: auto;
+}
+
+/* Controls for msg input, includes input box, send button, and leave button */
+.msg-controls {
+    display: flex;
+    width: 52%;
+    /* align-items: center; */
+    gap: 0.5rem;
+}
+
+/* Message input box */
+#msg-input {
+    width: 70%;
+    padding: 0.75rem;
+    font-size: 1.15rem;
+}
+
+/* Message send button */
+#msg-send {
+    width: 25%;
+    height: 100%;
+    padding: 0.5rem;
+    font-size: 1.15rem;
+    background-color: #2a3542;
+    color: #FFF;
+    border: none;
+}
+
+/* Chat leave button */
+#chat-leave {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.15rem;
+    cursor: pointer;
+    background-color: #D22B2B;
+    color: #FFF;
+    border: none;
+}
+
+/* Hover effects for both buttons */
+#msg-send:hover, #chat-leave:hover {
+    opacity: 70%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Turns nav links into a collapsable menu icon (<650px) */
+@media screen and (max-width: 850px) {
+  /* Chat box itself */
+    #chat {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 65%;
+        border: 0.1rem solid #000;
+        border-radius: 2rem;
+        padding: 1rem 1.5rem;
+        background-color: #E5E5E5;
+        margin-top: 0.5rem;
+        gap: 0.5rem;
+        overflow: auto;
+    }
+
+    /* Controls for msg input, includes input box, send button, and leave button */
+    .msg-controls {
+        display: flex;
+        width: 85%;
+        gap: 0.5rem;
+    }
+}
+

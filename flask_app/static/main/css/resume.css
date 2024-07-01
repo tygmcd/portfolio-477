@@ -1,0 +1,126 @@
+/* Resume section stylesheet */
+
+/* Wrapper for resume page */
+.resume-wrapper {
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+/* Wrapper for resume content */
+.resume-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #444;
+    margin: 5vh auto;
+    margin-bottom: 0;
+    width: 80vw;
+}
+
+/* Wrapper for institution content */
+.institution-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Divider for each institution */
+.inst-div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Wrapper for position content */
+.pos-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Left position column (title, dept) */
+.pos-1 {
+    width: 80%;
+}
+
+/* Right position column (dates) */
+.pos-2 {
+    text-align: end;
+}
+
+/* Title of institution */
+.inst-title {
+    font-size: 2rem;
+}
+
+/* Allignment for location of institution */
+.city-state {
+    text-align: end;
+}
+
+/* Font sizing for various components */
+.city-state, .pos-resp, .exp-text, .dates {
+    font-size: 1.1rem;
+}
+
+/* Don't display mobile styling of dates initially */
+.dates-mobile {
+    display: none;
+}
+
+/* Title of position */
+.pos-title {
+    float: left;
+    font-size: 1.25rem;
+}
+
+/* Responsibilites of position */
+.pos-resp {
+    font-size: 1.1rem
+}
+
+/* List of experiences */
+.exp-list {
+    margin-top: 2vh;
+    margin-left: 5vw;
+}
+
+/* Each skill */
+.skill-text {
+    font-size: 0.9rem;
+    margin-left: 2rem;
+}
+
+/* Media query for smaller screen sizes (<650px) */
+@media screen and (max-width: 650px) {
+    /* Flex-direction changes for various components */
+    .institution-content, .pos-content {
+        flex-direction: column;
+    }
+
+    /* Display dates mobile component */
+    .dates-mobile {
+        display: block;
+    }
+
+    /* Hide regular dates component */
+    .dates {
+        display: none;
+    }
+
+    /* Allignment for location of institution */
+    .city-state {
+        text-align: start;
+    }
+
+    /* Font sizing for various components */
+    .city-state, .pos-resp, .exp-text, .dates {
+        font-size: 1rem;
+    }
+
+    /* Title of institution */
+    .inst-title {
+        font-size: 1.5rem;
+    }
+    
+}

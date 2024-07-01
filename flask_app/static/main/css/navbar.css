@@ -1,0 +1,150 @@
+/* Navbar Stylesheet */
+
+/* Variables */
+:root {
+    --web-primary-color: #2a3542;
+}
+
+/* Set font for all elements */
+* {
+    font-family: "Gill Sans", sans-serif
+}
+
+/* Wrapper for the Navbar content
+    Uses grid layout system */
+.nav-wrapper {
+    background-color: var(--web-primary-color);
+    height: 7.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Removes link underline */
+.title-link, .nav-link {
+    text-decoration: none;
+}
+
+/* Page title (left of nav elements) */
+.title {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Contains the ul element */
+.nav-menu {
+    padding-top: 1vh;
+    text-align: center;
+}
+
+/* Navigation li elements */
+.nav-element {
+    display: inline;
+    padding-right: 2vw;
+    list-style-type: none;
+}
+
+/* Navigation a link elements */
+.nav-link {
+    transition: ease 0.3s;
+    color: white;
+    font-size: 1.25rem;
+}
+
+/* Changes link opacity on mouse hover */
+.nav-link:hover, .icon:hover {
+    opacity: 30%;
+}
+
+/* Navigation bar icons (Linkedin) */
+.nav-icon {
+    display: inline;;
+    vertical-align: middle;
+}
+
+/* Icon image itself */
+.icon {
+    transition: ease 0.3s;
+    width: 2rem;
+}
+
+/* Collapsable menu icon, not displayed at large screen sizes */
+.collapse-icon {
+    display: none;
+}
+
+/* Do not display mobile elements to start */
+.mobile-nav-element, .mobile-nav-link, .mobile-nav-wrappe, .divider-m  {
+    display: none;
+}
+
+/* Turns nav links into a collapsable menu icon (<650px) */
+@media screen and (max-width: 830px) {
+    /* No longer display nav elements and linkedin icon */
+    .nav-element, .nav-icon {
+        display: none;
+    }
+
+    /* Add in the collapsable icon */
+    .collapse-icon {
+        display: inline;
+    }
+
+    /* Adjust opacity when icon is hovered over */
+    .icon:hover {
+        opacity: 30%;
+        cursor: pointer;
+    }
+
+    /* Contains the ul element */
+    .nav-menu {
+        padding-top: 0.75vh;
+        padding-right: 3vw;
+        text-align: right;
+    }
+
+    /* Page title (left of nav elements) */
+    .title {
+        font-size: 1.2rem;
+        padding-left: 3vw;
+    }
+
+    /* Styling for mobile divider */
+    .divider-m {
+        display: block;
+        color: white;
+        margin: auto;
+        width: 90%;
+        opacity: 50%;
+        height: 0;
+        margin-top: 2vh;
+    }
+
+    /* Wrapper for the mobile nav section
+        don't display initially */
+    .mobile-nav-wrapper {
+        display: none;
+        width: 100vw;
+        height: 70vh;
+        background-color: var(--web-primary-color);
+    }
+
+    /* Navigation li elements */
+    .mobile-nav-element {
+        display: block;
+        list-style-type: none;
+        padding-top: 3vh;
+        padding-left: 4vw;
+    }
+
+    /* Navigation a link elements */
+    .mobile-nav-link {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+}

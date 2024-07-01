@@ -1,0 +1,3 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Academia","Michigan State University","Computer Science & Engineering (CSE)",NULL,"East Lansing","Michigan",NULL
+"2","Industry","Auto-Owners Insurance","Agency Interface Web Systems",NULL,"Lansing","Michigan",NULL

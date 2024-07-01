@@ -1,0 +1,45 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+  <!-- Main Section (Piano) -->
+  <div class="piano-wrapper">
+    <div class="piano-poem">
+        <p>Behold piano great and old, it's master slumbers in far off cold, 
+          If you wish to see anew, call out to it - we see you.</p>
+    </div>
+
+    <!-- Divider to separate poem from piano -->
+    <hr class="divider">
+
+    <!-- Piano component itself-->
+    <div class="piano-base">
+      <h1 class="awoken-title">I have awoken...</h1>
+      <h1 class="piano-title">The Great Old One</h1>
+      <div class="keys">
+        <div id="w1" class="key-white"><p class="key-type-w">A</p></div>
+        <div id="b1" class="key-black"><p class="key-type-b">W</p></div>
+        <div id="w2" class="key-white"><p class="key-type-w">S</p></div>
+        <div id="b2" class="key-black"><p class="key-type-b">E</p></div>
+        <div id="w3" class="key-white"><p class="key-type-w">D</p></div>
+
+        <div id="w4" class="key-white"><p class="key-type-w">F</p></div>
+        <div id="b3" class="key-black"><p class="key-type-b">T</p></div>
+        <div id="w5" class="key-white"><p class="key-type-w">G</p></div>
+        <div id="b4" class="key-black"><p class="key-type-b">Y</p></div>
+        <div id="w6" class="key-white"><p class="key-type-w">H</p></div>
+        <div id="b5" class="key-black"><p class="key-type-b">U</p></div>
+        <div id="w7" class="key-white"><p class="key-type-w">J</p></div>
+
+        <div id="w8" class="key-white"><p class="key-type-w">K</p></div>
+        <div id="b6" class="key-black"><p class="key-type-b">O</p></div>
+        <div id="w9" class="key-white"><p class="key-type-w">L</p></div>
+        <div id="b7" class="key-black"><p class="key-type-b">P</p></div>
+        <div id="w10" class="key-white"><p class="key-type-w">;</p></div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='piano/js/piano.js') }}"></script>
+{% endblock %}

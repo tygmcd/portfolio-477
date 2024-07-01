@@ -1,0 +1,32 @@
+/* Feedback Section style sheet */
+
+/* Wrapper for feedback page */
+.feedback-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 80vh;
+    width: 80vw;
+    margin: 5vh auto;
+}
+
+/* Feedback title */
+.fb-title {
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+/* Wrapper for feedback content itself */
+.fb-content {
+    margin-bottom: 2vh;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Lines of feedback text */
+.fb-text {
+    font-size: 1.25rem;
+    margin-bottom: 2vh;
+    letter-spacing: 0.1rem;
+}

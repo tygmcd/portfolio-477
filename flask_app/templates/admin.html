@@ -1,0 +1,39 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<!-- Admin page content for clearing DB tables and deleting accounts -->
+    <div class="admin-wrapper">
+        <div class="clear-table">
+            <h3 class="a-heading">Clear Table</h3>
+            <form action="/cleartable" id="clear-form" method="post" enctype="application/x-www-form-urlencoded">
+                <input id="cb" type="checkbox"  name="feedback">
+                <label id="clear-label" for="feedback">Feedback</label><br>
+                <input type="submit" class="a-button" name="Submit" value="Clear">
+            </form>
+            <p class="status-msg-g">{{ message }}</p>
+        </div>
+        <div class="accounts">
+            <h3 class="a-heading">Registered Accounts</h3>
+            <form action="/manageaccounts" id="accounts-form" method="post" enctype="application/x-www-form-urlencoded">
+                {% for account in accounts %}
+                    <input id="cb" type="checkbox"  name="{{ account['email'] }}">
+                    <label id="clear-label" for="feedback">{{ account['email'] }} <span class="role">{{ account['role'] }}</label><br>
+                {% endfor %}
+                <input type="submit" class="a-button" value="Delete">
+            </form>
+        </div>
+        <div class="create-account">
+            <h3 class="a-heading">Create Account</h3>
+            <form action="/createaccount" id="create-form" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="text" class="account-input" name="email" placeholder="Email">
+                <input type="text" class="account-input" name="password" placeholder="Password">
+                <input type="submit" class="a-button" value="Create">
+            </form>
+            {% if status == 1 %}
+                <p class="status-msg-g">User created successfully!</p>
+            {% elif status == 0 %}
+                <p class="status-msg-r">User creation failed</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

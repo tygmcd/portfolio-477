@@ -1,0 +1,9 @@
+"experience_id","position_id","name","description","hyperlink","start_date","end_date"
+"1","1","GPA","3.96",NULL,NULL,NULL
+"2","1","Tau Beta Pi","Member of  The Engineering Honor Society","https://www.tbp.org/home.cfm",NULL,NULL
+"3","1","Dean's List","7/7 semesters",NULL,NULL,NULL
+"4","2","Lecture","Present weekly material on core programming concepts",NULL,NULL,NULL
+"5","2","Debug","Aid in debugging student's Python code",NULL,NULL,NULL
+"6","2","Improve","Partake in weekly staff meetings with the goal of creating a better learning experience for our students",NULL,NULL,NULL
+"7","3","Frontend Work","Refreshed multiple webpages on the associate intranet with a custom CSS framework along with HTML and JavaScript to meet new user interface standards.",NULL,NULL,NULL
+"8","3","Backend Work","Developed a transaction quota validator using Java and Spring that tracks the number of new business proposals a user creates and prevents anyone over a given limit from creating one in attempt to prevent bad actors from accessing our systems.",NULL,NULL,NULL

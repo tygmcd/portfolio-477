@@ -1,0 +1,94 @@
+/* Login Stylesheet */
+
+/* Variables */
+:root {
+    --web-primary-color: #2a3542;
+}
+
+/* Wrapper for entire login page */
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading */
+.login-heading {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--web-primary-color);
+}
+
+/* Form for login */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    width: 40%;
+    height: 40vh;
+    text-align: center;
+    border: 0.1rem solid var(--web-primary-color);
+    border-radius: 1.5rem;
+}
+
+/* Input box for email/password */
+.login-input {
+    width: 70%;
+    height: 10%;
+    padding: 0.5rem;
+    font-size: 1.15rem;
+}
+
+/* Submit button to login */
+.login-submit {
+    width: 75%;
+    height: 20%;
+    background-color: var(--web-primary-color);
+    border: 0.1rem solid #FFF;
+    border-radius: 0.5rem;
+    color: #FFF;
+    font-size: 1.15rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Hover effects for button */
+.login-submit:hover {
+    cursor: pointer;
+    opacity: 70%;
+    transition: 0.2s;
+}
+
+/* Message if authentication fails */
+.auth-message {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #FF0000;
+}
+
+@media screen and (max-width: 650px) {
+    /* Wrapper for entire login page */
+    .login-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 65vh;
+        margin: auto;
+        align-items: center;
+    }
+
+    /* Form for login */
+    .login-form {
+        padding: 0;
+        width: 70%;
+        height: 45vh;
+        text-align: center;
+        align-items: center;
+        border: 0.1rem solid var(--web-primary-color);
+        border-radius: 1.5rem;
+    }
+}

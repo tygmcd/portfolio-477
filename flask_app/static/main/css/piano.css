@@ -1,0 +1,240 @@
+/* Piano Stylesheet */
+
+/* Variables */
+:root {
+    --web-primary-color: #2a3542;
+    --ivory-keys: #f8f7e6;
+    --grand-piano: #2f3332;
+}
+
+/* Defines grid layout for piano application */
+.piano-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 5vh auto;
+    gap: 5vh;
+}
+
+/* Styling for poem on top of page */
+.piano-poem {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.25rem;
+    margin-top: 1vh;
+}
+
+/* Stylling for "The Great Old One */
+.piano-title {
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    font-family: 'Old English Five', sans-serif;
+    color: var(--ivory-keys);
+    font-size: 2.5rem;
+                                            
+}
+
+/* Container in which the keys are located */
+.piano-base {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    border: 0.35rem solid black;
+    border-radius: 3rem 3rem 0 0;
+    object-fit: fill;
+    background-color: var(--grand-piano);
+}
+
+/* Styling for "I have awoken.." */
+.awoken-title {
+    display: none;
+    text-align: center;
+    margin-top: 10vh;
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'Creepster';
+    text-shadow: 0.4rem 0.4rem black;
+}
+
+/* Keys container, includes both black and white keys */
+.keys {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+/* Styling for instance of a white key */
+.key-white {
+    height: 45vh;
+    width: 6.25vw;
+    background-color: var(--ivory-keys);
+    border-radius:  0 0 0.75rem 0.75rem;
+    border: 0.25rem solid black;
+
+}
+
+/* Special border radii for certain keys on the edge */
+#w1, #w4, #w8 {
+    border-radius:  0.75rem 0 0.75rem 0.75rem;
+}
+
+/* Special border radii for certain keys on the edge */
+#w3, #w7, #w10 {
+    border-radius:  0 0.75rem 0.75rem 0.75rem;
+}
+
+/* Styling for instance of a black key */
+.key-black {
+    height: 25vh;
+    width: 2.5vw;
+    margin: 0 -1.3vw 21vh -1.3vw;
+    background-color: black;
+    z-index: 1;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Character displayed on white key when hovered on */
+.key-type-w {
+    display: none;
+    position: relative;
+    font-size: 1.25rem;
+    text-align: center;
+    top: 87%;
+}
+
+/* Character displayed on black key when hovered on */
+.key-type-b {
+    color: white;
+    display: none;
+    position: relative;
+    font-size: 1.1rem;
+    text-align: center;
+    top: 80%;
+
+}
+
+/* Animation for when monster is awoken */
+@keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+
+/* Media query for when screen is <650px in width */
+@media screen and (max-width: 650px) {
+    /* Container in which the keys are located */
+    .piano-base {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 60vh;
+        border: 0.35rem solid black;
+        border-radius: 3rem 3rem 0 0;
+        object-fit: fill;
+        background-color: var(--grand-piano);
+    }
+
+    /* Styling for instance of a white key */
+    .key-white {
+        height: 27vh;
+        width: 6vw;
+        background-color: var(--ivory-keys);
+        border-radius:  0 0 0.5rem 0.5rem;
+        border: 0.2rem solid black;
+
+    }
+
+    /* Styling for instance of a black key */
+    .key-black {
+        height: 15vh;
+        width: 2.5vw;
+        margin: 0 -1.3vw 12.5vh -1.3vw;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    /* Stylling for "The Great Old One */
+    .piano-title {
+        padding-top: 7.5vh;
+        font-size: 1.75rem;
+    }
+
+    /* Special border radii for certain keys on the edge */
+    #w1, #w4, #w8 {
+        border-radius:  0.5rem 0 0.5rem 0.5rem;
+    }
+    
+    /* Special border radii for certain keys on the edge */
+    #w3, #w7, #w10 {
+        border-radius:  0 0.5rem 0.5rem 0.5rem;
+    }
+
+    /* Styling for poem on top of page */
+    .piano-poem {
+        font-size: 1rem;
+    }
+
+    /* Character displayed on white key when hovered on */
+    .key-type-w {
+        display: none;
+        font-size: 1rem;
+        top: 85%;
+    }
+
+    /* Character displayed on black key when hovered on */
+    .key-type-b {
+        color: white;
+        display: none;
+        position: relative;
+        font-size: 0.7rem;
+        top: 70%;
+    }
+
+    /* Styling for "I have awoken.." */
+    .awoken-title {
+        display: none;
+        text-align: center;
+        margin-top: 10vh;
+        color: white;
+        font-size: 2.5rem;
+        font-family: 'Creepster';
+        text-shadow: 0.4rem 0.4rem black;
+    }
+
+}
+
+/* Media query for when screen is <450px in height */
+@media screen and (max-height: 450px) {
+    /* Stylling for "The Great Old One */
+    .piano-title {
+        padding-top: 7.5vh;
+        font-size: 1.25rem;
+    }
+
+    /* Character displayed on white key when hovered on */
+    .key-type-w {
+        display: none;
+        font-size: 0.75rem;
+        top: 75%;
+    }
+
+    /* Character displayed on black key when hovered on */
+    .key-type-b {
+        color: white;
+        display: none;
+        position: relative;
+        font-size: 0.5rem;
+        top: 65%;
+    }
+
+
+}

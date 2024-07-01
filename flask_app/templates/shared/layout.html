@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Tyler McDonald</title>
+    <link rel="icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}" >
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/old-english-five" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet'>
+  
+    <!-- Need stylesheets here-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/header.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/navbar.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/main.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/feedback.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/admin.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/piano.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/resume.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/login.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/chat.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main/css/footer.css') }}"  />
+
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <img src="{{ url_for('static', filename='main/images/bg-3.jpg') }}"  alt="header-background" loading="lazy">
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="nav-wrapper">
+        <a class="title-link" href="/home">
+            {% if user is not none and user != "Unknown" %}
+              <h1 class="title">Welcome, {{ user }}!</h1>
+            {% else %}
+              <h1 class="title">CSE 477 - Homework 3</h1>
+            {% endif %}
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-element"><a class="nav-link" href="/home">Home</a></li>
+          <li class="nav-element"><a class="nav-link" href="/projects">Projects</a></li>
+          <li class="nav-element"><a class="nav-link" href="/resume">Resume</a></li>
+          <li class="nav-element"><a class="nav-link" href="/chat">Chat</a></li>
+          {% if user is not none and user != "Unknown" %}
+            <li class="nav-element"><a class="nav-link" href="/logout">Logout</a></li>
+          {% else %}
+            <li class="nav-element"><a class="nav-link" href="/login">Login</a></li>
+          {% endif %}
+          <li class="nav-icon"><a href="https://www.linkedin.com/in/tyler-g-mcdonald" target="_blank"><img class="icon" src="{{ url_for('static', filename='main/images/social-linkedin.png') }}" alt="Linkedin" loading="lazy"></a></li>
+          <li class="collapse-icon"><img class="icon" src="{{ url_for('static', filename='main/images/menu-bar.png') }}" alt="menu-icon" loading="lazy"></li>
+        </ul>
+      </div>
+      <div class="mobile-nav-wrapper">
+        <ul class="mobile-nav-menu">
+          <li class="mobile-nav-element"><a class="mobile-nav-link" href="/home">Home</a></li>
+          <hr class="divider-m">
+          <li class="mobile-nav-element"><a class="mobile-nav-link" href="/projects">Projects</a></li>
+          <hr class="divider-m">
+          <li class="mobile-nav-element"><a class="mobile-nav-link" href="/resume">Resume</a></li>
+          <hr class="divider-m">
+          <li class="mobile-nav-element"><a class="mobile-nav-link" href="https://www.linkedin.com/in/tyler-g-mcdonald" target="_blank">LinkedIn</a></li>
+          <hr class="divider-m">
+          <li class="mobile-nav-element"><a class="mobile-nav-link" href="/chat">Chat</a></li>
+          <hr class="divider-m">
+          {% if user is not none and user != "Unknown" %}
+            <li class="mobile-nav-element"><a class="mobile-nav-link" href="/logout">Logout</a></li>
+          {% else %}
+            <li class="mobile-nav-element"><a class="mobile-nav-link" href="/login">Login</a></li>
+          {% endif %}
+          <hr class="divider-m">
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Page Content -->
+    <main>
+      {% block maincontent %}{% endblock %}
+      <button class="feedback-btn">Feedback</button>
+      <form class="feedback-form" action="/processfeedback" method="post" enctype="application/x-www-form-urlencoded">
+        <input class="fb-input" type="text" id="name" name="name" placeholder="Name" title="Name of commenter"><br>
+        <input class="fb-input" type="text" id="email" name="email" placeholder="Email" title="Email of commenter"><br>
+        <textarea class="fb-input-2" type="text" id="comment" name="comment" placeholder="Insert feedback here.." title="Comment of commenter"></textarea><br>
+        <input class="submit-input" type="submit" id="submit" name="submit" title="Button to submit form">
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wrapper">
+        <p class="c-text"><a class="admin-portal" href="/admin">©</a> Copyright 2023 by Tyler McDonald</p>
+      </div>
+    </footer>
+
+    <!-- Scripts-->
+    <script src="{{ url_for('static', filename='main/js/mobilenav.js') }}"></script>
+    <script src="{{ url_for('static', filename='main/js/feedback.js') }}"></script>
+    {% block extrajs %}{% endblock %}
+
+  </body>
+</html>

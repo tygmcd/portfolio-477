@@ -1,0 +1,28 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+  <!-- Project Page Content -->
+    <div class="proj-head-wrapper">
+      <h1 class="proj-page-title">Below is a list of projects I worked on in CSE 477:</h1>
+      <p class="proj-p">Click an image or hyperlink in the description to learn more!</p>
+      <hr class="divider">
+    </div>
+
+    <div class="proj-wrapper">
+      <div class="img-col">
+        <a href="/projects/piano"><img class="portrait" src="{{ url_for('static', filename='main/images/piano.jpeg') }}" alt="piano" loading="lazy"></a>
+      </div>
+      <div class="proj-desc">
+        <h2 class="proj-title">JavaScript Piano</h2>
+        <p>As a part of my first homework assignment in CSE 477, I developed an interactive piano built in pure
+            HTML, CSS, and Javascript. This tool (in addition to the website itself) demonstrates my ability to build
+            beautiful and responsive front-end applications.</p>
+        <a href="/projects/piano"><button class="btn" type="button">Check it out!</button></a>
+      </div>
+    </div>
+
+    <div class="proj-footer-wrapper">
+      <hr class="divider">
+      <h3 class="proj-footer-text">More coming soon....</h3>
+    </div>
+{% endblock %}

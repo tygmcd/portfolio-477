@@ -1,0 +1,343 @@
+/* Main Section Stylesheet */
+
+/* Variables */
+:root {
+    --web-primary-color: #2a3542;
+}
+
+/* Wrapper for the main content
+    Includes portrait and description 
+    Utilizes grid layout system */
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh;
+    width: 80vw;
+    margin: 5vh auto;
+    gap: 2vw;
+}
+
+/* Column for portrait, overflow hidden to keep pic in col */
+.image-col {
+    overflow: hidden;
+}
+
+/* Portrait itself, scaled down so border shows. Covers entire col */
+.portrait {
+    border: 0.4rem solid var(--web-primary-color);
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    
+}
+
+/* Column for description, overflow auto so scroll bar appears */
+.desc-col {
+    overflow: auto;
+    font-size: 1.25rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Makes name appear bigger and bolder */
+.name {
+    font-size: 2rem;
+    font-weight: 750;
+}
+
+/* Styling for MSU green text */
+.msu {
+    color: #18453b;
+    font-weight: bold;
+}
+
+/* Padding to separate paragraphs */
+.bio-2 {
+    padding-top: 2vh;
+}
+
+/* Styling for primary Stellantis colored text */
+.stellantis {
+    color: #243882;
+    font-weight: bold;
+}
+
+/* Styling for primary AO colored text */
+.ao {
+    color: #22ccff;
+    font-weight: bold;
+}
+
+/* Wrapper for the line break and fun fact */
+.fact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr, 1fr, 1fr;
+    width: 80vw;
+    margin: 5vh auto;
+    gap: 2vw;
+}
+
+/* Title of fact section */
+.fact-title {
+    padding-top: 2.5vh;
+    text-align: center;
+}
+
+/* Fact text itself */
+.fact-p {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+/* Horizontal line break in between sections */
+.divider {
+    margin-top: 2vh;
+    height: 0;
+}
+
+/* Wrapper for top of projects page */
+.proj-head-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr;
+    width: 80vw;
+    margin: 5vh auto;
+    gap: 2vw;
+}
+
+/* Allignmemt for description elements */
+.proj-page-title, .proj-p, .proj-footer-text {
+    text-align: center;
+}
+
+/* Font size for project page title */
+.proj-page-title {
+    font-size: 1.75rem;
+}
+
+/* Title of the project */
+.proj-title {
+    margin-top: 7.5vh;
+    margin-bottom: 2vh;
+}
+
+/* Wrapper for main content of projects page */
+.proj-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh;
+    width: 80vw;
+    margin: 5vh auto;
+    gap: 2vw;
+}
+
+/* Description column for info ab project */
+.proj-desc {
+    overflow: auto;
+    font-size: 1.25rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Footer ("more coming soon") on projects paage */
+.proj-footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5vh ;
+    width: 80vw;
+    margin: 5vh auto;
+    gap: 2vw;
+}
+
+/* Styling for buttons, adapted from https://www.w3schools.com/css/css3_buttons.asp */
+.btn {
+    background-color: var(--web-primary-color);
+    border: none;
+    color: white;
+    padding: 2vh 3vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 2vh;
+    transition-duration: 0.4s;
+  }
+
+  /* Hover effect for buttons, adapted from https://www.w3schools.com/css/css3_buttons.asp */
+  .btn:hover {
+    background-color: white;
+    color: black;
+    border: 0.2rem solid var(--web-primary-color);
+    cursor: pointer;
+  }
+
+  /* Button used to toggle feedback form */
+  .feedback-btn {
+    background-color: var(--web-primary-color);
+    color: white;
+    position: fixed;
+    height: 2rem;
+    width: 6rem;
+    transform: rotate(-90deg);
+    right: 0;
+    top: 50%;
+    transition: 0.5s;
+  }
+
+  /* Effects for when feedback button is hovered over */
+  .feedback-btn:hover {
+    background-color: white;
+    color: black;
+    border: 0.1rem solid var(--web-primary-color);
+    cursor: pointer;
+  }
+
+  /* Form for providing feedback */
+  .feedback-form {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--web-primary-color);
+    padding: 2.5rem 2rem;
+    width: 30vw;
+    height: 40vh;
+    top: 35%;
+    right: 35%;
+    border-radius: 0.5rem;
+  }
+
+  /* Name + email input */
+  .fb-input {
+    padding: 0.5rem;
+    width: 75%;
+    height: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  /* Feedback comment input */
+  .fb-input-2 {
+    padding: 0.5rem;
+    width: 75%;
+    height: 7rem;
+    font-size: 1.25rem;
+  }
+
+  /* Submit button for form */
+  .submit-input {
+    padding: 0.5rem;
+    width: 80%;
+    font-size: 1.2rem;
+    background-color: #96beec;
+    color: white;
+    border: 0.1rem solid white;
+    transition: 0.5s;
+  }
+
+  /* Effects for when submit button is hovered over */
+  .submit-input:hover {
+    background-color: white;
+    color: black;
+    border: 0.1rem solid black;
+    cursor: pointer;
+  }
+
+  /* Link to enter admin portal */
+  .admin-portal {
+    text-decoration: none;
+    color: #6d6c6c;
+
+  }
+
+/* Media query for smaller screen sizes, only for small things such as margins. 
+Main responsiveness taken care of in 650px query (<850px) */
+@media screen and (max-width: 850px) {
+    /* Title of the project */
+    .proj-title {
+        margin-top: 3.5vh;
+        margin-bottom: 2vh;
+    }
+}
+
+/* Media query for smaller screen sizes (<650px) */
+@media screen and (max-width: 650px) {
+    /* Wrapper for the main content
+    Includes portrait and description 
+    Utilizes grid layout system */
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        margin: auto;
+        align-items: center;
+        gap: 7.5vh;
+    }
+
+    /* Wrapper for main content of projects page */
+    .proj-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 35vh auto;
+        width: 80vw;
+        margin: 5vh auto;
+        gap: 2vw;
+    }
+
+    /* Make overflow content visible at this size */
+    .desc-col {
+        overflow: visible;
+    }
+
+    /* Add extra padding to top of image column */
+    .image-col {
+        padding-top: 5vh;
+    }
+
+    /* Button used to toggle feedback form */
+    .feedback-btn {
+        background-color: var(--web-primary-color);
+        color: white;
+        position: fixed;
+        height: 2rem;
+        width: 6rem;
+        right: -4%;
+        top: 50%;
+        transition: 0.5s;
+        font-size: 0.8rem;
+    }
+
+    /* Effects for when feedback button is hovered over */    
+    .feedback-btn:hover {
+        background-color: white;
+        color: black;
+        border: 0.1rem solid var(--web-primary-color);
+        cursor: pointer;
+    }
+
+    /* Form for providing feedback */
+    .feedback-form {
+        padding: 5vw;
+        width: 55vw;
+        height: 45vh;
+        right: 20%;
+    }
+
+    /* Name + email input */
+    .fb-input {
+        padding: 0.5rem;
+        width: 75%;
+        height: 1.2rem;
+        font-size: 1.15rem;
+    }
+    
+    /* Feedback comment input */
+    .fb-input-2 {
+        padding: 0.5rem;
+        width: 75%;
+        height: 10rem;
+        font-size: 1.15rem;
+    }
+
+}
